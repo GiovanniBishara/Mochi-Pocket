@@ -1,0 +1,320 @@
+/* Keep the display lettering; use clear system digits in every label and animated message. */
+@font-face{font-family:'Pixelify Sans';src:url('../../assets/fonts/pixelify-sans.ttf');font-weight:400 700;unicode-range:U+0000-002F,U+003A-10FFFF;font-display:swap}
+html,body{margin:0;padding:0;background:transparent;color:#243b5a;font-family:'Segoe UI',sans-serif;height:100%;overflow:hidden}
+body{user-select:none}input,textarea,select{user-select:text}
+button,a,label,select{cursor:pointer}button:disabled{cursor:wait}
+#mochi-pocket-blue{padding:18px 12px 22px;display:block;max-width:1100px;margin:0 auto}
+#mochi-pocket-blue .mp-console{max-width:none;margin:auto}
+#mochi-pocket-blue .mp-top{-webkit-app-region:drag;min-height:30px;padding:0 24px 10px;gap:9px}
+#mochi-pocket-blue button,#mochi-pocket-blue input,#mochi-pocket-blue select,#mochi-pocket-blue textarea{-webkit-app-region:no-drag}
+#mochi-pocket-blue .mp-engraving{margin-right:auto;font-size:12px}
+#mochi-pocket-blue .mp-minimize,#mochi-pocket-blue .mp-close{background:#4f7498;border:1px solid #7898b8;color:#e7f2ff;border-radius:5px;width:25px;height:24px;padding:0;font-size:18px;line-height:1}
+#mochi-pocket-blue .mp-close:hover{background:#b45e52}
+#mochi-pocket-blue .mp-power{margin-left:6px}
+#mochi-pocket-blue .mp-screen-content{height:360px;min-height:0;padding:16px 18px 12px;overflow-y:auto;max-height:none;scrollbar-width:thin;scrollbar-color:#8caec9 #e5f0f8}
+#mochi-pocket-blue .mp-screen-bar{font-size:11px;padding:7px 12px}
+#mochi-pocket-blue .mp-settings-button{font-size:17px;color:#345472;padding:0 4px;border:0;background:transparent;line-height:1}
+#mochi-pocket-blue .mp-menu-option{font-size:18px;min-height:41px}
+#mochi-pocket-blue .mp-greeting{margin-bottom:17px}#mochi-pocket-blue .mp-greeting h2{font-size:28px}
+#mochi-pocket-blue .mp-greeting p:last-child{font-size:12px}#mochi-pocket-blue .mp-kicker{font-size:10px}
+#mochi-pocket-blue .mp-mochi{width:105px;height:105px;flex-basis:105px}
+#mochi-pocket-blue .mp-screen-status{font-size:11px;min-height:32px}
+#mochi-pocket-blue .mp-screen-help{font-size:11px}
+#mochi-pocket-blue .mp-heading{margin-bottom:10px}#mochi-pocket-blue .mp-heading h2{font-size:24px}
+#mochi-pocket-blue .mp-intro{font-size:12px;margin-bottom:12px}
+#mochi-pocket-blue .mp-field{font-size:12px;margin-bottom:10px}
+#mochi-pocket-blue input:not([type=checkbox]),#mochi-pocket-blue select,#mochi-pocket-blue textarea{box-sizing:border-box;width:100%;min-width:0;font:13px/1.25 'Segoe UI',sans-serif;padding:7px 8px;border:1px solid #9bb6cb;border-radius:3px;background:#f9fcff;color:#243b5a;box-shadow:inset 1px 2px 0 #e2eef6;min-height:34px}
+#mochi-pocket-blue textarea{resize:vertical;height:57px;min-height:45px}
+#mochi-pocket-blue .mp-primary,#mochi-pocket-blue .mp-secondary{font-size:15px;min-height:34px;cursor:pointer}
+#mochi-pocket-blue .mp-result{font-size:12px;min-height:16px}
+#mochi-pocket-blue .mp-result[data-error=true]{color:#923b2e}
+#mochi-pocket-blue .mp-small-note{font-size:11px;color:#5b7287;margin:7px 0}
+#mochi-pocket-blue .mp-link{border:0;background:transparent;text-decoration:underline;color:#375e80;font-size:11px;padding:3px}
+#mochi-pocket-blue .mp-houses label,#mochi-pocket-blue .mp-protection{font-size:12px}
+#mochi-pocket-blue input[type=checkbox]{height:15px;width:15px;flex-basis:15px}
+#mochi-pocket-blue .mp-houses legend{font-size:12px}
+#mochi-pocket-blue .mp-import{padding:11px;margin:12px 0;align-items:center}
+#mochi-pocket-blue .mp-import strong{font-size:12px}#mochi-pocket-blue .mp-import small{font-size:11px;max-width:300px;overflow-wrap:anywhere}
+#mochi-pocket-blue .mp-profile strong{font-size:13px}#mochi-pocket-blue .mp-profile span{font-size:12px}
+#mochi-pocket-blue .mp-profile-details{font-size:11px;color:#607487;padding:0 0 9px;border-bottom:1px solid #c9dceb}
+#mochi-pocket-blue .mp-profile-details p{margin:3px 0}#mochi-pocket-blue .mp-profile-details .mp-error{color:#923b2e}
+#mochi-pocket-blue .mp-profile{border-bottom:0;padding:9px 0 4px}
+#mochi-pocket-blue .mp-alloggiati-controls{border:1px solid #b9cfdf;border-radius:4px;background:#e2eef7;padding:9px 11px;margin:10px 0 12px}
+#mochi-pocket-blue .mp-alloggiati-controls>.mp-small-note:first-child{margin-top:0}
+#mochi-pocket-blue .mp-alloggiati-controls .mp-actions{margin:8px 0}
+#mochi-pocket-blue .mp-alloggiati-controls .mp-last-check{margin:7px 0 0;font-size:10px}
+#mochi-pocket-blue .mp-alloggiati-cards{display:grid;gap:12px}
+#mochi-pocket-blue .mp-alloggiati-card{display:block;padding:12px;border:1px solid #a9c5d9;border-radius:5px;background:#f8fcff;box-shadow:inset 3px 0 #86a9c5,2px 2px 0 #d6e4ee;overflow:hidden}
+#mochi-pocket-blue .mp-alloggiati-card[data-tone=success]{box-shadow:inset 3px 0 #78a996,2px 2px 0 #d6e4ee}
+#mochi-pocket-blue .mp-alloggiati-card[data-tone=attention]{box-shadow:inset 3px 0 #c69a50,2px 2px 0 #d6e4ee}
+#mochi-pocket-blue .mp-alloggiati-card[data-tone=error]{box-shadow:inset 3px 0 #b67667,2px 2px 0 #d6e4ee}
+#mochi-pocket-blue .mp-alloggiati-card-heading{display:flex;gap:10px;align-items:center;justify-content:space-between;margin-bottom:10px}
+#mochi-pocket-blue .mp-alloggiati-card h3{margin:0;font:21px/1.1 'Pixelify Sans','Segoe UI',sans-serif;overflow-wrap:anywhere}
+#mochi-pocket-blue .mp-alloggiati-card .mp-alloggiati-badge{font:10px/1.25 'Segoe UI',sans-serif;padding:4px 6px;border:1px solid #bdcfdd;border-radius:3px;background:#e6eff6;color:#4e6780;max-width:45%;text-align:center}
+#mochi-pocket-blue .mp-alloggiati-card[data-tone=success] .mp-alloggiati-badge{background:#eaf5ef;border-color:#b3cfc2;color:#32644e}
+#mochi-pocket-blue .mp-alloggiati-card[data-tone=attention] .mp-alloggiati-badge{background:#fff3dc;border-color:#ddc28e;color:#805c26}
+#mochi-pocket-blue .mp-alloggiati-card[data-tone=error] .mp-alloggiati-badge{background:#fff0eb;border-color:#d8b7ae;color:#8c4a3a}
+#mochi-pocket-blue .mp-alloggiati-metrics{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+#mochi-pocket-blue .mp-alloggiati-metric{padding:8px;background:#eaf2f9;border:1px solid #d0e0ec;border-radius:3px;min-width:0}
+#mochi-pocket-blue .mp-alloggiati-card .mp-alloggiati-number{display:block;font:27px/1 'Pixelify Sans','Segoe UI',sans-serif;margin-bottom:3px;color:#2e506d}
+#mochi-pocket-blue .mp-alloggiati-card .mp-alloggiati-metric>span{display:block;font:11px/1.3 'Segoe UI',sans-serif;color:#3e5e79}
+#mochi-pocket-blue .mp-alloggiati-metric>small{display:block;font:10px/1.3 'Segoe UI',sans-serif;color:#536f85;margin-top:3px}
+#mochi-pocket-blue .mp-alloggiati-dates{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:10px 0 8px;font-size:10px;line-height:1.35}
+#mochi-pocket-blue .mp-alloggiati-dates dt{color:#566e84;margin-bottom:2px}
+#mochi-pocket-blue .mp-alloggiati-dates dd{color:#3f5c76;margin:0;overflow-wrap:anywhere}
+#mochi-pocket-blue .mp-alloggiati-delivery{font:11px/1.35 'Segoe UI',sans-serif;color:#8b622d;margin:8px 0 10px}
+#mochi-pocket-blue .mp-alloggiati-delivery[data-verified=true]{color:#396e57}
+#mochi-pocket-blue .mp-alloggiati-folder{width:100%;text-align:center}
+#mochi-pocket-blue .mp-alloggiati-folder:disabled{cursor:default;opacity:.6}
+#mochi-pocket-blue .mp-alloggiati-errors{margin:8px 0 11px;font:11px/1.35 'Segoe UI',sans-serif;color:#8b4d3b}
+#mochi-pocket-blue .mp-alloggiati-errors summary{cursor:pointer}
+#mochi-pocket-blue .mp-alloggiati-errors ul{padding-left:18px;margin:6px 0;overflow-wrap:anywhere}
+#mochi-pocket-blue .mp-alloggiati-empty{padding:13px;border:1px dashed #a9c5d9;border-radius:4px;font-size:12px;line-height:1.45;background:#e9f2f9}
+#mochi-pocket-blue .mp-alloggiati-cloud-note{margin-top:13px}
+#mochi-pocket-blue .mp-alloggiati-technical{border-top:1px solid #c6dce9;padding-top:9px;margin-top:12px}
+#mochi-pocket-blue .mp-alloggiati-technical summary{font:15px/1.2 'Pixelify Sans','Segoe UI',sans-serif;cursor:pointer;color:#506e87}
+#mochi-pocket-blue .mp-alloggiati-technical .mp-secondary{font-size:13px;margin-top:3px}
+@media(max-width:600px){#mochi-pocket-blue .mp-alloggiati-card-heading{align-items:flex-start;flex-direction:column;gap:7px}#mochi-pocket-blue .mp-alloggiati-card .mp-alloggiati-badge{max-width:none;text-align:left}}
+#mochi-pocket-blue .mp-badge{display:inline-block;background:#d4e8f5;color:#31516d;padding:2px 6px;border-radius:3px;font-size:10px}
+#mochi-pocket-blue .mp-ready{color:#2d6e52}#mochi-pocket-blue .mp-warning{color:#8b5b25}
+#mochi-pocket-blue .mp-history li{padding:10px 0}#mochi-pocket-blue .mp-history strong{font-size:13px}#mochi-pocket-blue .mp-history small{font-size:12px}#mochi-pocket-blue .mp-history time{font-size:10px}
+#mochi-pocket-blue .mp-total{padding:12px 0;font-size:13px}#mochi-pocket-blue .mp-total output{font-size:24px}
+#mochi-pocket-blue .mp-receipt-step[hidden],#mochi-pocket-blue [hidden]{display:none!important}
+#mochi-pocket-blue .mp-file-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:9px}
+#mochi-pocket-blue .mp-home-links{display:flex;justify-content:space-between;gap:12px;margin:7px 0 0;font-size:10px;color:#52708b}
+#mochi-pocket-blue .mp-profile-editor{padding-top:12px;border-top:1px solid #c6dce9;margin-top:12px}
+#mochi-pocket-blue .mp-profile-editor h3{font:19px 'Pixelify Sans','Segoe UI',sans-serif;margin:0 0 12px}
+#mochi-pocket-blue .mp-connected-note{font-size:11px;color:#56718a;overflow-wrap:anywhere}
+#mochi-pocket-blue .mp-screen-content[aria-busy=true]{opacity:.75}
+#mochi-pocket-blue .mp-booking-search{border:1px solid #bad1e2;border-radius:4px;padding:9px 10px;margin:7px 0 13px;background:#e3eff8}
+#mochi-pocket-blue .mp-booking-search summary{font:17px 'Pixelify Sans','Segoe UI',sans-serif;cursor:pointer;list-style-position:inside}
+#mochi-pocket-blue .mp-booking-search .mp-small-note{margin:7px 0 10px}
+#mochi-pocket-blue .mp-booking-search .mp-actions{margin-top:0}
+#mochi-pocket-blue .mp-booking-choices{display:flex;flex-direction:column;gap:7px;margin-top:8px}
+#mochi-pocket-blue .mp-booking-choice{text-align:left;font:12px 'Segoe UI',sans-serif}
+#mochi-pocket-blue .mp-add-property{display:block;margin-top:-7px;margin-bottom:6px}
+#mochi-pocket-blue .mp-booking-filled{padding:8px;background:#deedf7;border-left:3px solid #739cbd}
+#mochi-pocket-blue .mp-receipt-output{overflow-wrap:anywhere}
+#mochi-pocket-blue .mp-sound-toggle{margin-left:auto;border:0;background:transparent;color:#345472;font:19px 'Segoe UI Symbol',sans-serif;min-width:25px;padding:0 3px;line-height:1}
+#mochi-pocket-blue .mp-sound-toggle[aria-pressed=false]{opacity:.55}
+#mochi-pocket-blue .mp-audio-settings{border-bottom:1px solid #c6dce9;padding-bottom:10px;margin-bottom:12px}
+#mochi-pocket-blue .mp-audio-settings h3{font:19px 'Pixelify Sans','Segoe UI',sans-serif;margin:0 0 9px}
+#mochi-pocket-blue .mp-audio-level{display:flex;align-items:center;gap:9px;font-size:12px}
+#mochi-pocket-blue #mochi-volume{height:24px;min-height:24px;min-width:60px;padding:0;border:0;box-shadow:none;background:transparent;accent-color:#537b9e;flex:1}
+#mochi-pocket-blue .mp-volume-value{min-width:31px}
+#mochi-pocket-blue .mp-selected-profile{padding:10px 11px;border:1px solid #b4cfe2;border-radius:4px;background:#dfedf7;margin:-2px 0 12px}
+#mochi-pocket-blue .mp-selected-profile-title{font:17px 'Pixelify Sans','Segoe UI',sans-serif;margin:0 0 4px}
+#mochi-pocket-blue .mp-selected-profile-info{font:12px/1.4 'Segoe UI',sans-serif;margin:0;color:#4e6780}
+#mochi-pocket-blue .mp-profile-actions{display:flex;gap:8px;flex-wrap:wrap;justify-content:space-between;margin-top:9px}
+#mochi-pocket-blue .mp-profile-load-error{padding:8px;border-left:3px solid #d99b43;background:#fff2da;margin:9px 0}
+@media(max-height:620px){#mochi-pocket-blue{padding-top:12px}#mochi-pocket-blue .mp-screen-content{height:280px;min-height:0}}
+@media(max-width:700px){#mochi-pocket-blue .mp-engraving{display:none}}
+
+/* The message panel keeps its footprint while letters appear. */
+#mochi-pocket-blue .mp-screen-status.mp-dialogue{display:flex;align-items:stretch;gap:8px;padding:8px 10px;margin:7px 9px;background:#f8fcff;border:2px solid #668caa;border-radius:5px;box-shadow:inset 0 0 0 2px #e0edf7,2px 2px 0 #c3d9e9;height:96px;min-height:96px;color:#294760;position:relative;overflow:hidden}
+#mochi-pocket-blue .mp-dialogue-visual{min-width:0;flex:1;overflow-y:auto;scrollbar-width:thin}
+#mochi-pocket-blue .mp-dialogue-heading{display:flex;align-items:center;gap:6px;font:12px/1.2 'Pixelify Sans','Segoe UI',sans-serif;letter-spacing:.5px;margin-bottom:5px;color:#54748e}
+#mochi-pocket-blue .mp-dialogue-icon{color:#507c9e}
+#mochi-pocket-blue .mp-dialogue-text{font:15px/1.22 'Pixelify Sans','Segoe UI',sans-serif;overflow-wrap:anywhere;white-space:pre-wrap;margin:0}
+#mochi-pocket-blue .mp-dialogue-previous{font:10px/1.2 'Segoe UI',sans-serif;color:#75899b;white-space:nowrap;text-overflow:ellipsis;overflow:hidden;margin:0 0 4px}
+#mochi-pocket-blue .mp-dialogue-live{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;border:0}
+#mochi-pocket-blue .mp-dialogue-finish{align-self:flex-end;border:0;background:transparent;color:#54748e;padding:4px;font-size:11px}
+#mochi-pocket-blue .mp-dialogue[data-tone=success]{border-color:#6f9b8a;background:#f1faf5}
+#mochi-pocket-blue .mp-dialogue[data-tone=attention]{border-color:#b38743;background:#fff5e1}
+#mochi-pocket-blue .mp-dialogue[data-tone=error]{border-color:#a66e61;background:#fff3ef}
+#mochi-pocket-blue .mp-attention{display:flex;gap:9px;align-items:center;background:#fff0ce;color:#6d4b20;border-bottom:2px solid #c3934b;padding:10px 12px;font-size:12px;box-shadow:inset 4px 0 #d29b3d}
+#mochi-pocket-blue .mp-attention>div{min-width:0;flex:1}
+#mochi-pocket-blue .mp-attention strong{display:block;font:17px/1.1 'Pixelify Sans','Segoe UI',sans-serif;margin:0 0 4px}
+#mochi-pocket-blue .mp-attention p{margin:0;line-height:1.35;overflow-wrap:anywhere}
+#mochi-pocket-blue .mp-attention[data-tone=error]{background:#fff0e9;color:#7f3e31;border-color:#b27a66}
+#mochi-pocket-blue .mp-attention-close{align-self:flex-start;flex:0 0 22px;border:0;background:transparent;font-size:19px;line-height:1;color:inherit;padding:0}
+#mochi-pocket-blue .mp-attention .mp-secondary{font-size:13px;flex:0 0 auto}
+#mochi-pocket-blue .mp-google-login{display:flex;align-items:center;gap:12px;padding:11px 12px;background:#fff5e1;color:#6d4b20;border-bottom:2px solid #c3934b}
+#mochi-pocket-blue .mp-google-login>div:first-child{flex:1;min-width:0}
+#mochi-pocket-blue .mp-google-login strong{display:block;font:18px/1.2 'Pixelify Sans','Segoe UI',sans-serif}
+#mochi-pocket-blue .mp-google-login p{font:12px/1.4 'Segoe UI',sans-serif;margin:4px 0 0;overflow-wrap:anywhere}
+#mochi-pocket-blue .mp-google-login-actions{display:flex;gap:7px;flex-wrap:wrap}
+#mochi-pocket-blue .mp-google-login-actions .mp-secondary{font-size:13px;padding:7px 10px}
+@media(max-width:600px){#mochi-pocket-blue .mp-google-login{align-items:flex-start;flex-direction:column;gap:8px}}
+#mochi-pocket-blue .mp-import{transition:background-color .15s,border-color .15s;min-width:0}
+#mochi-pocket-blue .mp-import.mp-dragging{border:2px dashed #b48940;background:#fff0cd;box-shadow:inset 0 0 0 3px #fff8e9}
+#mochi-pocket-blue .mp-import[aria-disabled=true]{opacity:.65}
+#mochi-pocket-blue .mp-drop-hint{color:#466d8e}
+#mochi-pocket-blue .mp-file-actions .mp-secondary{font-size:13px;padding:6px 9px}
+#mochi-pocket-blue .mp-google-connection{display:flex;align-items:center;gap:12px;justify-content:space-between;padding:10px 11px;margin:12px 0 8px;border:1px solid #b7cedf;border-radius:4px;background:#e3eef7}
+#mochi-pocket-blue .mp-google-status{min-width:0;flex:1}
+#mochi-pocket-blue .mp-google-heading{display:flex;gap:8px;align-items:center}
+#mochi-pocket-blue .mp-google-label{font:17px/1.2 'Pixelify Sans','Segoe UI',sans-serif;color:#385775}
+#mochi-pocket-blue .mp-google-led{width:10px;height:10px;flex:0 0 10px;border:1px solid #657e94;border-radius:2px;background:#a3b6c6;box-shadow:inset 1px 1px 0 #d5e3ee,1px 1px 0 #7893aa}
+#mochi-pocket-blue .mp-google-detail{font:11px/1.35 'Segoe UI',sans-serif;color:#4b6680;margin:5px 0 0;overflow-wrap:anywhere}
+#mochi-pocket-blue .mp-google-connection>.mp-secondary{font-size:13px;flex:0 0 auto;padding:6px 9px}
+#mochi-pocket-blue .mp-google-connection[data-status=connected]{border-color:#a6c9ba;background:#eaf5ef}
+#mochi-pocket-blue .mp-google-connection[data-status=connected] .mp-google-label{color:#285d48}
+#mochi-pocket-blue .mp-google-connection[data-status=connected] .mp-google-led{border-color:#28644b;background:#45a67a;box-shadow:inset 1px 1px 0 #a5dfbf,1px 1px 0 #8ab7a3}
+#mochi-pocket-blue .mp-google-connection[data-status=disconnected]{border-color:#d4b0a9;background:#fff1ed}
+#mochi-pocket-blue .mp-google-connection[data-status=disconnected] .mp-google-label{color:#85473c}
+#mochi-pocket-blue .mp-google-connection[data-status=disconnected] .mp-google-led{border-color:#85473c;background:#cb6b5a;box-shadow:inset 1px 1px 0 #f4b9ac,1px 1px 0 #bc948a}
+#mochi-pocket-blue .mp-google-connection[data-status=checking] .mp-google-led{animation:mp-google-check 1s steps(2,end) infinite}
+@keyframes mp-google-check{50%{opacity:.4}}
+@media(max-width:600px){#mochi-pocket-blue .mp-google-connection{align-items:flex-start;flex-direction:column;gap:8px}}
+@media(prefers-reduced-motion:reduce){#mochi-pocket-blue .mp-google-connection[data-status=checking] .mp-google-led{animation:none}}
+#mochi-pocket-blue .mp-kross-summary{padding:12px;background:#e1eef7;border:1px solid #aac7dc;border-radius:4px;margin-top:12px;font-size:12px}
+#mochi-pocket-blue .mp-kross-summary h3{font:21px/1.1 'Pixelify Sans','Segoe UI',sans-serif;margin:0 0 7px}
+#mochi-pocket-blue .mp-kross-summary p{margin:0 0 11px;color:#4e6780}
+#mochi-pocket-blue .mp-kross-conflicts{display:grid;gap:9px;margin:12px 0}
+#mochi-pocket-blue .mp-kross-conflict{padding:11px;border:1px solid #c8ad91;border-left:3px solid #bc8650;border-radius:4px;background:#fffaf1;overflow-wrap:anywhere}
+#mochi-pocket-blue .mp-kross-conflict-heading{display:flex;align-items:flex-start;gap:7px;margin-bottom:7px}
+#mochi-pocket-blue .mp-kross-conflict-heading>span{flex:0 0 20px;background:#f1debf;color:#795524;text-align:center;border-radius:3px;font:600 12px/20px 'Segoe UI',sans-serif}
+#mochi-pocket-blue .mp-kross-conflict h4{font:600 12px/1.5 'Segoe UI',sans-serif;margin:0;color:#624b32}
+#mochi-pocket-blue .mp-kross-conflict p{font:12px/1.45 'Segoe UI',sans-serif;margin:6px 0;color:#4d6070}
+#mochi-pocket-blue .mp-kross-conflict .mp-kross-conflict-dates{font-size:11px;color:#7b6244;font-variant-numeric:tabular-nums}
+#mochi-pocket-blue .mp-kross-conflict .mp-kross-conflict-action{margin:9px 0 0;padding-top:7px;border-top:1px solid #e3cfb5;color:#665139}
+#mochi-pocket-blue .mp-kross-conflict .mp-summary-table{margin:8px 0}
+#mochi-pocket-blue .mp-kross-report-source{font-size:10px;overflow-wrap:anywhere}
+#mochi-pocket-blue .mp-summary-counts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;margin-bottom:12px}
+#mochi-pocket-blue .mp-summary-counts>div{background:#f5fbff;border:1px solid #b6d0e3;border-radius:3px;padding:7px 3px;text-align:center}
+#mochi-pocket-blue .mp-summary-counts strong{display:block;font:25px/1 'Pixelify Sans','Segoe UI',sans-serif}
+#mochi-pocket-blue .mp-summary-counts span{font-size:10px;color:#57718a}
+#mochi-pocket-blue .mp-summary-table{overflow-x:auto}
+#mochi-pocket-blue .mp-summary-table table{width:100%;border-collapse:collapse;font-size:10px}
+#mochi-pocket-blue .mp-summary-table th,#mochi-pocket-blue .mp-summary-table td{padding:6px 4px;border-bottom:1px solid #bed4e4;text-align:center}
+#mochi-pocket-blue .mp-summary-table th:first-child{text-align:left}
+@media(prefers-reduced-motion:reduce){#mochi-pocket-blue .mp-import{transition:none}}
+
+/* Keep the console headings pixelated and use clear, aligned numerals for data. */
+#mochi-pocket-blue .mp-total output,
+#mochi-pocket-blue .mp-step-label,
+#mochi-pocket-blue .mp-alloggiati-card .mp-alloggiati-number,
+#mochi-pocket-blue .mp-summary-counts strong,
+#mochi-pocket-blue .mp-summary-table td,
+#mochi-pocket-blue .mp-history time,
+#mochi-pocket-blue .mp-volume-value,
+#mochi-pocket-blue .mp-number-proposed,
+#mochi-pocket-blue input[name=number],
+#mochi-pocket-blue input[inputmode=decimal],
+#mochi-pocket-blue input[type=date],
+#mochi-pocket-blue input[name=recipientPostalCode]{font-family:'Segoe UI',Arial,sans-serif;font-variant-numeric:tabular-nums lining-nums;letter-spacing:0}
+#mochi-pocket-blue .mp-total output{font-size:25px;font-weight:650;line-height:1.2}
+#mochi-pocket-blue .mp-step-label{font-size:12px;font-weight:600}
+#mochi-pocket-blue .mp-alloggiati-card .mp-alloggiati-number{font-size:26px;font-weight:650}
+#mochi-pocket-blue .mp-summary-counts strong{font-size:25px;font-weight:650}
+#mochi-pocket-blue .mp-recipient-salutation{margin:-2px 0 10px;color:#365a78;overflow-wrap:anywhere}
+/* Monthly cleaning figures share one layout across all properties. */
+#mochi-pocket-blue .mp-cleaning-cards{display:grid;gap:12px}
+#mochi-pocket-blue .mp-cleaning-card{background:#f8fcff;border:1px solid #adc8dc;border-radius:4px;padding:12px}
+#mochi-pocket-blue .mp-cleaning-card h3{margin:0 0 10px;font:21px/1.2 'Pixelify Sans','Segoe UI',sans-serif}
+#mochi-pocket-blue .mp-cleaning-metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px}
+#mochi-pocket-blue .mp-cleaning-metrics>div{padding:9px 4px;text-align:center;background:#eaf2f9;border:1px solid #cbdeeb;border-radius:3px}
+#mochi-pocket-blue .mp-cleaning-metrics strong{display:block;font:600 25px/1.2 'Segoe UI',sans-serif;font-variant-numeric:tabular-nums}
+#mochi-pocket-blue .mp-cleaning-metrics span{display:block;margin-top:3px;font-size:11px;color:#4a6780}
+#mochi-pocket-blue .mp-cleaning-error{font-size:12px;color:#923b2e}
+#mochi-pocket-blue .mp-cleaning-details{margin-top:10px;font-size:12px}
+#mochi-pocket-blue .mp-cleaning-details summary{cursor:pointer;color:#315d7f}
+#mochi-pocket-blue .mp-cleaning-details td{text-align:left;vertical-align:top}
+#mochi-pocket-blue .mp-cleaning-stay-warning{display:block;font-size:10px;color:#805b30;line-height:1.4;margin-top:4px}
+#mochi-pocket-blue .mp-cleaning-details [data-excluded=true]{background:#edf2f5}
+#mochi-pocket-blue .mp-cleaning-details [data-excluded=true] .mp-cleaning-row-value{text-decoration:line-through;color:#637587}
+#mochi-pocket-blue .mp-cleaning-excluded,#mochi-pocket-blue .mp-cleaning-uncertain{display:block;width:fit-content;margin-top:4px;border:1px solid #b4c3ce;border-radius:3px;padding:2px 5px;font-size:10px;line-height:1.3;color:#455b6e;background:#e4ebf0;text-decoration:none}
+#mochi-pocket-blue .mp-cleaning-uncertain{background:#fff3dc;border-color:#dbc390;color:#805b30}
+#mochi-pocket-blue .mp-cleaning-row-action{white-space:nowrap}
+#mochi-pocket-blue .mp-cleaning-row-action button{font-size:11px;padding:5px 4px}
+@media(max-width:600px){#mochi-pocket-blue .mp-cleaning-details table thead{display:none}#mochi-pocket-blue .mp-cleaning-details table tr{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px;padding:10px 5px;border-bottom:1px solid #c8d9e5}#mochi-pocket-blue .mp-cleaning-details table td{display:block;min-width:0;padding:0;border:0;overflow-wrap:anywhere}#mochi-pocket-blue .mp-cleaning-details table td:nth-child(1){grid-column:1;grid-row:1}#mochi-pocket-blue .mp-cleaning-details table td:nth-child(2){grid-column:1/-1;grid-row:2}#mochi-pocket-blue .mp-cleaning-details table td:nth-child(3){grid-column:1/-1;grid-row:3;font-size:11px}#mochi-pocket-blue .mp-cleaning-details table td:nth-child(4){grid-column:2;grid-row:1}}
+#mochi-pocket-blue .mp-tax-period-nights{font:12px/1.4 'Segoe UI',sans-serif;color:#315d7f;margin:4px 0 8px;font-variant-numeric:tabular-nums}
+#mochi-pocket-blue .mp-tax-allocation-field{max-width:420px}
+#mochi-pocket-blue .mp-kross-colors{border-top:1px solid #b6d0e3;margin-top:15px;padding-top:12px}
+#mochi-pocket-blue .mp-kross-colors>summary{cursor:pointer;font:18px/1.2 'Pixelify Sans','Segoe UI',sans-serif;color:#355b7b}
+#mochi-pocket-blue .mp-colors-booking{background:#f7fbff;border:1px solid #b6d0e3;border-radius:4px;margin-top:9px;padding:10px;font-size:12px}
+#mochi-pocket-blue .mp-colors-booking p{margin:5px 0 9px;font-variant-numeric:tabular-nums}
+@media(max-width:600px){#mochi-pocket-blue .mp-cleaning-metrics{grid-template-columns:repeat(2,minmax(0,1fr))}}
+#mochi-pocket-blue .mp-number-preview{display:grid;grid-template-columns:auto 1fr;align-items:center;column-gap:10px;row-gap:4px;margin-top:10px;padding-top:8px;border-top:1px solid #b8d0e2}
+#mochi-pocket-blue .mp-number-preview>span{font:11px/1.3 'Segoe UI',sans-serif;color:#46667f}
+#mochi-pocket-blue .mp-number-proposed{font-size:19px;font-weight:650;line-height:1.2;color:#294e6d}
+#mochi-pocket-blue .mp-number-preview>small{grid-column:1/-1;font:10px/1.35 'Segoe UI',sans-serif;color:#4c6a82;overflow-wrap:anywhere}
+#mochi-pocket-blue .mp-number-suggestion{padding:10px 11px;margin:0 0 12px;border:1px solid #b4cfe2;border-radius:4px;background:#e3eff8}
+#mochi-pocket-blue .mp-number-status>span{font:11px/1.3 'Segoe UI',sans-serif;color:#46667f;margin-right:10px}
+#mochi-pocket-blue .mp-number-status>.mp-number-source{font:11px/1.35 'Segoe UI',sans-serif;color:#4c6a82;margin:6px 0;overflow-wrap:anywhere}
+#mochi-pocket-blue .mp-number-actions{display:flex;flex-wrap:wrap;gap:7px;margin-top:8px}
+#mochi-pocket-blue .mp-number-actions .mp-secondary{font-size:13px;padding:6px 9px}
+#mochi-pocket-blue .mp-number-suggestion[data-state=loading] .mp-number-proposed{opacity:.6}
+#mochi-pocket-blue .mp-number-suggestion>.mp-small-note{margin-bottom:0}
+
+/* The tax worksheet uses the existing console palette and compact data rows. */
+#mochi-pocket-blue .mp-tax-filters{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.7fr) minmax(0,1fr);gap:8px}
+#mochi-pocket-blue .mp-tax-rate{font:11px/1.45 'Segoe UI',sans-serif;padding:8px 10px;margin:0 0 12px;border-left:3px solid #759ab6;background:#e3eff8;color:#365771;user-select:text}
+#mochi-pocket-blue .mp-tax-filters .mp-field{margin-bottom:4px}
+#mochi-pocket-blue .mp-tax-tools{margin:8px 0}
+#mochi-pocket-blue .mp-tax-summary{padding:11px;border:1px solid #acc7dc;border-radius:4px;background:#e5eff7;margin:12px 0}
+#mochi-pocket-blue .mp-tax-pending{margin:0 0 9px;font:12px/1.4 'Segoe UI',sans-serif;color:#3d5f7b}
+#mochi-pocket-blue .mp-tax-metrics{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+#mochi-pocket-blue .mp-tax-simple-metrics{grid-template-columns:repeat(3,minmax(0,1fr))}
+#mochi-pocket-blue .mp-tax-portal-note{margin:9px 0 0}
+#mochi-pocket-blue .mp-tax-bulk{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:9px 0 12px}
+#mochi-pocket-blue .mp-tax-bulk-note{font:11px/1.4 'Segoe UI',sans-serif;color:#4d6a80;flex:1;min-width:180px}
+#mochi-pocket-blue .mp-tax-quick-row{display:grid;grid-template-columns:minmax(0,1fr) auto;column-gap:12px;padding:9px 10px;border:1px solid #b5cddd;border-radius:4px;background:#f6fbff;color:#2d4e69}
+#mochi-pocket-blue .mp-tax-quick-row[data-status=confirmed]{border-left:3px solid #6b9b86}
+#mochi-pocket-blue .mp-tax-quick-row[data-status=stale]{border-left:3px solid #bb8065}
+#mochi-pocket-blue .mp-tax-quick-row[data-status=confirmed] .mp-tax-stay-badge{color:#326349;background:#e3f1e8}
+#mochi-pocket-blue .mp-tax-quick-row[data-status=stale] .mp-tax-stay-badge{color:#8b4d3b;background:#ffebe4}
+#mochi-pocket-blue .mp-tax-quick-heading{grid-column:1;display:flex;align-items:flex-start;gap:5px;flex-wrap:wrap;font:600 12px/1.4 'Segoe UI',sans-serif}
+#mochi-pocket-blue .mp-tax-quick-heading strong{overflow-wrap:anywhere;min-width:0}
+#mochi-pocket-blue .mp-tax-quick-dates{grid-column:1;font:11px/1.4 'Segoe UI',sans-serif;color:#526e85;margin:4px 0;font-variant-numeric:tabular-nums}
+#mochi-pocket-blue .mp-tax-quick-fields{grid-column:2;grid-row:1/span 3;display:flex;align-items:center;gap:8px;flex-wrap:wrap;max-width:330px}
+#mochi-pocket-blue .mp-tax-quick-fields label{display:flex;flex-direction:column;gap:4px;font:10px/1.3 'Segoe UI',sans-serif;color:#4b6982}
+#mochi-pocket-blue .mp-tax-quick-fields input{width:69px;box-sizing:border-box;padding:6px;border:1px solid #a9c3d8;border-radius:3px;font:13px/1.2 'Segoe UI',sans-serif;color:#294e6d;background:#fff}
+#mochi-pocket-blue .mp-tax-quick-fields select{min-width:94px;padding:6px;border:1px solid #a9c3d8;border-radius:3px;font:12px/1.2 'Segoe UI',sans-serif;color:#294e6d;background:#fff}
+#mochi-pocket-blue .mp-tax-quick-adults{display:block;min-width:55px;padding:5px 2px;font:600 17px/1.2 'Segoe UI',sans-serif;color:#294e6d;font-variant-numeric:tabular-nums}
+#mochi-pocket-blue .mp-tax-quick-fields .mp-secondary{font-size:12px;padding:6px 9px}
+#mochi-pocket-blue .mp-tax-quick-fields .mp-tax-quick-done{cursor:default;color:#326349;min-width:30px}
+#mochi-pocket-blue .mp-tax-quick-source,#mochi-pocket-blue .mp-tax-quick-feedback{grid-column:1;font:10px/1.4 'Segoe UI',sans-serif;color:#60798d;margin:2px 0 0}
+#mochi-pocket-blue .mp-tax-quick-feedback:empty{display:none}
+#mochi-pocket-blue .mp-tax-quick-footer{grid-column:1/-1;display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:3px}
+#mochi-pocket-blue .mp-tax-quick-footer .mp-link{margin-left:auto}
+#mochi-pocket-blue .mp-tax-quick-footer .mp-link{font-size:11px;padding:0}
+#mochi-pocket-blue .mp-tax-completeness{margin-top:14px;font:11px/1.4 'Segoe UI',sans-serif;color:#4d6b83}
+#mochi-pocket-blue .mp-tax-completeness summary{cursor:pointer}
+#mochi-pocket-blue .mp-tax-month-totals{margin-top:12px}
+@media(max-width:800px){#mochi-pocket-blue .mp-tax-quick-row{display:block}#mochi-pocket-blue .mp-tax-quick-fields{max-width:none;margin:7px 0}}
+@media(max-width:600px){#mochi-pocket-blue .mp-tax-simple-metrics{grid-template-columns:1fr}}
+#mochi-pocket-blue .mp-tax-metrics>div{padding:9px;background:#f8fcff;border:1px solid #c1d6e5;border-radius:3px}
+#mochi-pocket-blue .mp-tax-metrics span{display:block;font:10px/1.4 'Segoe UI',sans-serif;color:#4b6b84}
+#mochi-pocket-blue .mp-tax-metrics strong{display:block;margin-top:4px;font:600 21px/1.2 'Segoe UI',sans-serif;font-variant-numeric:tabular-nums;color:#294e6d}
+#mochi-pocket-blue .mp-tax-metrics small{display:block;font:10px/1.4 'Segoe UI',sans-serif;color:#4b6b84;margin-top:5px}
+#mochi-pocket-blue .mp-tax-period{margin:8px 0 0}
+#mochi-pocket-blue .mp-tax-status{background:#fff0d1;color:#7d5c26;white-space:nowrap}
+#mochi-pocket-blue .mp-tax-status[data-complete=true]{background:#e5f2e9;color:#2d6448}
+#mochi-pocket-blue .mp-tax-table{margin-top:10px}
+#mochi-pocket-blue .mp-tax-table table{font-size:10px;min-width:560px}
+#mochi-pocket-blue .mp-tax-table caption{text-align:left;font:10px/1.4 'Segoe UI',sans-serif;color:#4b6b84;margin-bottom:5px}
+#mochi-pocket-blue .mp-tax-table th{font-weight:600;white-space:nowrap}
+#mochi-pocket-blue .mp-tax-table tbody th{text-align:left}
+#mochi-pocket-blue .mp-tax-table td{font:10px/1.4 'Segoe UI',sans-serif;font-variant-numeric:tabular-nums;white-space:nowrap}
+#mochi-pocket-blue .mp-tax-issues,#mochi-pocket-blue .mp-tax-stay-warnings{padding-left:17px;font:11px/1.4 'Segoe UI',sans-serif;color:#855b27;margin:9px 0 0;overflow-wrap:anywhere}
+#mochi-pocket-blue .mp-tax-coverage{border:1px solid #b7cddd;border-radius:4px;padding:10px;margin:12px 0;background:#edf5fb}
+#mochi-pocket-blue .mp-tax-coverage legend{font:17px/1.2 'Pixelify Sans','Segoe UI',sans-serif;color:#365975;padding:0 4px}
+#mochi-pocket-blue .mp-tax-month-checks{display:flex;flex-wrap:wrap;gap:8px 16px;margin:9px 0}
+#mochi-pocket-blue .mp-tax-month-checks label{display:flex;align-items:center;gap:5px;font:12px/1.3 'Segoe UI',sans-serif}
+#mochi-pocket-blue .mp-tax-month-checks input,#mochi-pocket-blue .mp-tax-confirm input{accent-color:#517da0;width:15px;height:15px;flex:0 0 15px}
+#mochi-pocket-blue .mp-tax-list-heading,#mochi-pocket-blue .mp-tax-editor-heading{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:13px 0 8px}
+#mochi-pocket-blue .mp-tax-list-heading h3,#mochi-pocket-blue .mp-tax-editor-heading h3{font:20px/1.2 'Pixelify Sans','Segoe UI',sans-serif;margin:0}
+#mochi-pocket-blue .mp-tax-stay-count{font:12px/1.2 'Segoe UI',sans-serif;color:#55718a;background:#d9e9f5;padding:3px 7px;border-radius:3px}
+#mochi-pocket-blue .mp-tax-stays{display:grid;gap:6px}
+#mochi-pocket-blue .mp-tax-stay{display:grid;grid-template-columns:minmax(0,1fr) auto;text-align:left;gap:4px 9px;width:100%;padding:9px 10px;border:1px solid #b5cddd;border-radius:4px;background:#f6fbff;color:#2d4e69}
+#mochi-pocket-blue .mp-tax-stay[aria-current=true]{border-color:#537fa1;box-shadow:inset 3px 0 #537fa1;background:#e6f2fa}
+#mochi-pocket-blue .mp-tax-stay-title{font:600 12px/1.3 'Segoe UI',sans-serif;overflow-wrap:anywhere;min-width:0}
+#mochi-pocket-blue .mp-tax-stay-badge{font:10px/1.2 'Segoe UI',sans-serif;background:#fff0d1;color:#825a27;padding:3px 5px;border-radius:3px;align-self:start;white-space:nowrap}
+#mochi-pocket-blue .mp-tax-stay[data-status=confirmed] .mp-tax-stay-badge{color:#326349;background:#e3f1e8}
+#mochi-pocket-blue .mp-tax-stay[data-status=stale] .mp-tax-stay-badge{color:#8b4d3b;background:#ffebe4}
+#mochi-pocket-blue .mp-tax-stay[data-status=excluded] .mp-tax-stay-badge{color:#536778;background:#e4ebf0}
+#mochi-pocket-blue .mp-tax-stay-dates,#mochi-pocket-blue .mp-tax-stay small{grid-column:1/-1;font:11px/1.3 'Segoe UI',sans-serif;color:#526e85;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+#mochi-pocket-blue .mp-tax-stay small{font-size:10px}
+#mochi-pocket-blue .mp-tax-empty{padding:11px;border:1px dashed #acc7dc;border-radius:4px;font:12px/1.4 'Segoe UI',sans-serif;margin:0}
+#mochi-pocket-blue .mp-tax-editor{margin-top:14px;padding:11px;border:1px solid #9ebed5;border-radius:4px;background:#e8f2fa}
+#mochi-pocket-blue .mp-tax-editor-heading{margin:0 0 12px}
+#mochi-pocket-blue .mp-tax-editor .mp-small-note{margin:0 0 10px}
+#mochi-pocket-blue .mp-tax-confirm{display:flex;align-items:flex-start;gap:8px;font:12px/1.45 'Segoe UI',sans-serif;margin:12px 0 8px}
+#mochi-pocket-blue .mp-tax-confirm input{margin-top:2px}
+#mochi-pocket-blue .mp-tax-advanced{margin:10px 0;padding:9px;border:1px solid #bfd3e1;border-radius:3px;background:#f3f8fc}
+#mochi-pocket-blue .mp-tax-advanced summary{font:12px/1.4 'Segoe UI',sans-serif;color:#44647e;cursor:pointer}
+#mochi-pocket-blue .mp-tax-advanced .mp-field{margin-top:9px}
+#mochi-pocket-blue .mp-tax-export{padding-top:12px;border-top:1px solid #bdd1e0;margin-top:14px}
+@media(max-width:600px){#mochi-pocket-blue .mp-tax-filters{grid-template-columns:repeat(2,minmax(0,1fr))}#mochi-pocket-blue .mp-tax-filters .mp-field:first-child{grid-column:1/-1}#mochi-pocket-blue .mp-tax-metrics strong{font-size:18px}}

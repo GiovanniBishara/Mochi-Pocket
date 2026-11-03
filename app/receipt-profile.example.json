@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "profiles": [
+    {
+      "id": "casa-esempio",
+      "label": "Casa Esempio",
+      "issuer": {
+        "name": "Mario Esempio",
+        "taxId": "INSERIRE-CODICE-FISCALE-O-PARTITA-IVA",
+        "taxLabel": "P. IVA / C.F.",
+        "address": ["Via Esempio 10", "20100 Milano (MI)", "Italia"]
+      },
+      "property": {
+        "name": "Casa Esempio",
+        "address": "Via Esempio n. 10",
+        "city": "Milano",
+        "kind": "CAV"
+      }
+    }
+  ]
+}

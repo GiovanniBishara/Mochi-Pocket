@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="it"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'"><title>Mochi Pocket</title><link rel="stylesheet" href="console.css"><link rel="stylesheet" href="native.css"><script defer src="../../assets/lucide.min.js"></script><script defer src="sounds.js"></script><script defer src="dialogue.js"></script><script defer src="google-status.js"></script><script defer src="../shared/tourist-tax-quick.js"></script><script defer src="receipt.js"></script><script defer src="tourist-tax.js"></script><script defer src="cleaning.js"></script><script defer src="kross-colors.js"></script><script defer src="renderer.js"></script></head><body><div id="mochi-pocket-blue">
+  <section class="mp-console" aria-label="Mochi Pocket, mini app a forma di console portatile">
+    <div class="mp-shoulder mp-shoulder-left" aria-hidden="true"></div><div class="mp-shoulder mp-shoulder-right" aria-hidden="true"></div>
+    <header class="mp-top"><span class="mp-power-label"><span class="mp-led" aria-hidden="true"></span> POWER</span><span class="mp-engraving">YOUR POCKET OFFICE <span aria-hidden="true">✦</span></span><button type="button" class="mp-minimize" aria-label="Riduci a icona">−</button><button type="button" class="mp-close" aria-label="Chiudi Mochi Pocket">×</button><button type="button" class="mp-power cursor-interaction" aria-label="Metti Mochi Pocket in pausa" aria-pressed="false">ON / OFF</button></header>
+    <div class="mp-hardware">
+      <div class="mp-left-grip">
+        <div class="mp-dpad" role="group" aria-label="Croce direzionale">
+          <button type="button" class="mp-up cursor-interaction" data-direction="up" aria-label="Su">▴</button>
+          <button type="button" class="mp-left cursor-interaction" data-direction="left" aria-label="Sinistra">◂</button>
+          <span class="mp-center" aria-hidden="true">●</span>
+          <button type="button" class="mp-right cursor-interaction" data-direction="right" aria-label="Destra">▸</button>
+          <button type="button" class="mp-down cursor-interaction" data-direction="down" aria-label="Giù">▾</button>
+        </div>
+        <span class="mp-control-note">SCEGLI</span>
+        <div class="mp-grip-lines" aria-hidden="true"><span></span><span></span><span></span></div>
+      </div>
+      <div class="mp-screen-unit">
+        <div class="mp-bezel"><div class="mp-bezel-top"><span>✦ MOCHI DISPLAY</span><span>COLOR</span></div>
+          <div class="mp-screen">
+            <header class="mp-screen-bar"><span class="mp-location">LA SCRIVANIA</span><button type="button" class="mp-settings-button" aria-label="Impostazioni e collegamenti">⚙</button></header>
+            <div class="mp-screen-content" aria-busy="true">
+              <section data-screen="home" class="mp-page" aria-label="Menu principale">
+                <div class="mp-greeting"><div><p class="mp-kicker">IL TUO PICCOLO UFFICIO</p><h2>Cosa facciamo<br>oggi?</h2><p>Una cosa alla volta, insieme ✦</p></div><button type="button" class="mp-mochi cursor-interaction" aria-label="Saluta Mochi"><img data-mochi alt="Mochi, il gattino del tuo piccolo ufficio"></button></div>
+                <div class="mp-menu" aria-label="Scegli lo strumento">
+                  <button type="button" class="mp-menu-option cursor-interaction" data-module="ricevuta" aria-current="true"><span class="mp-menu-pointer" aria-hidden="true">▸</span><i data-lucide="receipt-text" aria-hidden="true"></i><span>Crea una ricevuta</span><small>01</small></button>
+                  <button type="button" class="mp-menu-option cursor-interaction" data-module="calendari"><span class="mp-menu-pointer" aria-hidden="true">▸</span><i data-lucide="calendar-days" aria-hidden="true"></i><span>Calendari Kross</span><small>02</small></button>
+                  <button type="button" class="mp-menu-option cursor-interaction" data-module="alloggiati"><span class="mp-menu-pointer" aria-hidden="true">▸</span><i data-lucide="files" aria-hidden="true"></i><span>Schedine / Alloggiati</span><small>03</small></button>
+                  <button type="button" class="mp-menu-option cursor-interaction" data-module="tasse"><span class="mp-menu-pointer" aria-hidden="true">▸</span><i data-lucide="calculator" aria-hidden="true"></i><span>Tassa di soggiorno</span><small>04</small></button>
+                  <button type="button" class="mp-menu-option cursor-interaction" data-module="pulizie"><span class="mp-menu-pointer" aria-hidden="true">▸</span><i data-lucide="brush" aria-hidden="true"></i><span>Pulizie del mese</span><small>05</small></button>
+                  <button type="button" class="mp-menu-option cursor-interaction" data-module="attivita"><span class="mp-menu-pointer" aria-hidden="true">▸</span><i data-lucide="list-checks" aria-hidden="true"></i><span>Diario delle attività</span><small>06</small></button>
+                </div>
+              </section>
+              <section data-screen="ricevuta" class="mp-page" hidden aria-label="Ricevuta ospite">
+                <div class="mp-heading"><h2>Ricevuta ospite</h2><span class="mp-step-label">1 / 2</span></div>
+                <div class="mp-receipt-step" data-step="0">
+                  <p class="mp-intro">Partiamo da intestazione e soggiorno.</p>
+                  <label class="mp-field">Intestatario<input value="Cliente di esempio" readonly autocomplete="off"></label>
+                  <div class="mp-two"><label class="mp-field">Numero<input value="ESEMPIO / 2026" readonly></label><label class="mp-field">Data ricevuta<input type="date" value="2026-10-22"></label></div>
+                  <div class="mp-two"><label class="mp-field">Arrivo<input type="date" class="mp-arrival" value="2026-10-20"></label><label class="mp-field">Partenza<input type="date" class="mp-departure" value="2026-10-22"></label></div>
+                  <div class="mp-actions"><button type="button" class="mp-primary cursor-interaction" data-local="receipt-next">Continua →</button></div>
+                </div>
+                <div class="mp-receipt-step" data-step="1" hidden>
+                  <p class="mp-intro">Controlla gli importi della tua ricevuta.</p>
+                  <div class="mp-two"><label class="mp-field">Canone (€)<input type="number" class="mp-rent" min="0.01" step="0.01" value="224.00"></label><label class="mp-field">Tassa soggiorno (€)<input type="number" class="mp-tax" min="0" step="0.01" value="16.00"></label></div>
+                  <div class="mp-total"><span>Totale ricevuta</span><output>240,00 €</output></div>
+                  <div class="mp-summary">Cliente di esempio · <span class="mp-nights">2 notti</span><small>Modello ricevuta ospite · dati fittizi</small></div>
+                  <div class="mp-actions"><button type="button" class="mp-secondary cursor-interaction" data-local="receipt-prev">← Dati</button><button type="button" class="mp-primary cursor-interaction" data-run="ricevuta">Crea PDF ↓</button></div>
+                </div>
+                <p class="mp-result" data-result="ricevuta" role="status" aria-live="polite"></p>
+              </section>
+              <section data-screen="calendari" class="mp-page" hidden aria-label="Calendari Kross">
+                <div class="mp-heading"><h2>Calendari Kross</h2><i data-lucide="calendar-days" aria-hidden="true"></i></div>
+                <div class="mp-import"><div><strong>Export prenotazioni</strong><small class="mp-filename">Nessun Excel scelto</small></div><button type="button" class="mp-secondary cursor-interaction" data-local="example">Usa esempio</button></div>
+                <fieldset class="mp-houses"><legend>Quali case aggiorniamo?</legend></fieldset>
+                <label class="mp-protection"><input type="checkbox" class="mp-protect" checked><span>Proteggi le modifiche manuali</span></label>
+                <div class="mp-actions"><button type="button" class="mp-secondary cursor-interaction" data-run="simula">Simula prima</button><button type="button" class="mp-primary cursor-interaction" data-run="calendari">Aggiorna →</button></div>
+                <p class="mp-result" data-result="calendari" role="status" aria-live="polite">Scegli l’Excel di esempio per provare.</p>
+              </section>
+              <section data-screen="alloggiati" class="mp-page" hidden aria-label="Schedine e Alloggiati">
+                <div class="mp-heading"><h2>Schedine / Alloggiati</h2></div>
+                <p class="mp-intro">Recupero ricevute e copia nella cartella di ogni struttura.</p>
+                
+                <p class="mp-schedule">↻ Automatico ogni 15 giorni<small>Recupero degli ultimi 30 giorni</small></p>
+                <div class="mp-actions"><button type="button" class="mp-primary cursor-interaction" data-run="alloggiati">Controlla e recupera ↻</button></div>
+                <p class="mp-result" data-result="alloggiati" role="status" aria-live="polite">Gli invii restano in ROSS1000.</p>
+              </section>
+              <section data-screen="tasse" class="mp-page" hidden aria-label="Tassa di soggiorno"></section>
+              <section data-screen="pulizie" class="mp-page" hidden aria-label="Pulizie del mese"></section>
+              <section data-screen="attivita" class="mp-page" hidden aria-label="Diario delle attività">
+                <div class="mp-heading"><h2>Il diario di Mochi</h2><i data-lucide="notebook-pen" aria-hidden="true"></i></div>
+                <p class="mp-intro">I risultati delle tue operazioni, qui.</p>
+                <ol class="mp-history"><li class="mp-empty">Nessuna attività ancora.<br>Prova uno strumento: ci penso io ✦</li></ol>
+                <div class="mp-history-nav" hidden><button type="button" class="mp-secondary cursor-interaction" data-history="prev" aria-label="Attività più recenti">←</button><span class="mp-history-page"></span><button type="button" class="mp-secondary cursor-interaction" data-history="next" aria-label="Attività precedenti">→</button></div>
+              </section>
+              <section data-screen="sleep" class="mp-page mp-sleep" hidden aria-label="Console in pausa"><img data-mochi alt="Mochi riposa"><h2>Una piccola pausa.</h2><p>Premi START quando vuoi ✦</p></section>
+            </div>
+            <div class="mp-screen-status"><span class="mp-status-led" aria-hidden="true"></span><span class="mp-status-text" role="status" aria-live="polite">Mochi è pronto ✦</span></div>
+            <footer class="mp-screen-help"><span class="mp-a-hint">A Scegli</span><span>B Indietro</span><span>SELECT Diario</span></footer>
+          </div>
+          <div class="mp-bezel-bottom"><span>MOCHI <em>pocket</em></span><span class="mp-pawprint" aria-hidden="true">✦</span></div>
+        </div>
+      </div>
+      <div class="mp-right-grip">
+        <div class="mp-ab" role="group" aria-label="Pulsanti azione"><div class="mp-button-a"><button type="button" class="mp-round mp-a cursor-interaction" aria-label="A: scegli o conferma">A</button><span>SCEGLI</span></div><div class="mp-button-b"><button type="button" class="mp-round mp-b cursor-interaction" aria-label="B: indietro">B</button><span>INDIETRO</span></div></div>
+        <span class="mp-shell-star" aria-hidden="true">✦</span>
+      </div>
+    </div>
+    <div class="mp-bottom"><span class="mp-shell-signature">POCKET OFFICE · v.13.0</span><div class="mp-small-controls"><div><button type="button" class="mp-select cursor-interaction" aria-label="Select: apri il diario"></button><span>SELECT</span></div><div><button type="button" class="mp-start cursor-interaction" aria-label="Start: avvia l’azione"></button><span>START</span></div></div><div class="mp-speaker" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div></div>
+  </section>
+  
+</div>
+</body></html>

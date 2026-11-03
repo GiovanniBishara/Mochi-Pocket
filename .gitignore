@@ -1,0 +1,15 @@
+node_modules/
+__pycache__/
+*.pyc
+dist/
+out/
+# real data never belongs here
+.local/
+Google/
+token*.json
+credentials*.json
+client_secret*.json
+receipt-profiles.json
+!examples/receipt-profiles.json
+*.pdf
+.private-words

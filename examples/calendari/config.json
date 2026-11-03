@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "calendars": [
+    {
+      "id": "glicine",
+      "name": "Glicine",
+      "type": "excel",
+      "file": "Glicine.xlsx",
+      "sheetName": "2026",
+      "roomName": "Appartamento Glicine"
+    },
+    {
+      "id": "lavanda",
+      "name": "Lavanda",
+      "type": "excel",
+      "file": "Lavanda.xlsx",
+      "sheetName": "2026",
+      "roomName": "Loft Lavanda"
+    },
+    {
+      "id": "ortensia",
+      "name": "Ortensia",
+      "type": "excel",
+      "file": "Ortensia.xlsx",
+      "sheetName": "2026",
+      "roomName": "Casa Ortensia"
+    }
+  ]
+}

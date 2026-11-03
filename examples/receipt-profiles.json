@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "profiles": [
+    {
+      "id": "glicine",
+      "label": "Glicine",
+      "calendarInitial": "G",
+      "issuer": {
+        "name": "Host Esempio",
+        "taxId": "INSERIRE-CODICE-FISCALE-O-PARTITA-IVA",
+        "taxLabel": "C.F.",
+        "address": [
+          "Via Esempio 1",
+          "00000 Città (XX)",
+          "Italia"
+        ]
+      },
+      "property": {
+        "name": "Glicine",
+        "address": "Via Esempio 1",
+        "city": "Città",
+        "kind": "CAV"
+      }
+    },
+    {
+      "id": "lavanda",
+      "label": "Lavanda",
+      "calendarInitial": "L",
+      "issuer": {
+        "name": "Host Esempio",
+        "taxId": "INSERIRE-CODICE-FISCALE-O-PARTITA-IVA",
+        "taxLabel": "C.F.",
+        "address": [
+          "Via Esempio 2",
+          "00000 Città (XX)",
+          "Italia"
+        ]
+      },
+      "property": {
+        "name": "Lavanda",
+        "address": "Via Esempio 2",
+        "city": "Città",
+        "kind": "CAV"
+      }
+    },
+    {
+      "id": "ortensia",
+      "label": "Ortensia",
+      "calendarInitial": "O",
+      "issuer": {
+        "name": "Host Esempio",
+        "taxId": "INSERIRE-CODICE-FISCALE-O-PARTITA-IVA",
+        "taxLabel": "C.F.",
+        "address": [
+          "Via Esempio 3",
+          "00000 Città (XX)",
+          "Italia"
+        ]
+      },
+      "property": {
+        "name": "Ortensia",
+        "address": "Via Esempio 3",
+        "city": "Città",
+        "kind": "CAV"
+      }
+    }
+  ]
+}

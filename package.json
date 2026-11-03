@@ -1,0 +1,20 @@
+{
+  "name": "mochi-pocket",
+  "productName": "Mochi Pocket",
+  "version": "0.13.0",
+  "private": true,
+  "description": "Un piccolo ufficio per chi gestisce affitti brevi: ricevute, calendari Kross, Alloggiati Web, tassa di soggiorno e pulizie.",
+  "author": "Giovanni Bishara",
+  "license": "MIT",
+  "repository": "github:GiovanniBishara/Mochi-Pocket",
+  "main": "app/main.cjs",
+  "scripts": {
+    "start": "electron .",
+    "test": "node --test tests/*.mjs",
+    "privacy": "node scripts/privacy-check.mjs",
+    "example": "python scripts/make_example.py"
+  },
+  "devDependencies": {
+    "electron": "45.2.1"
+  }
+}

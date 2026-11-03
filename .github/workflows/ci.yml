@@ -1,0 +1,56 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  privacy:
+    # Fails on anything that looks like personal data. MOCHI_PRIVATE_WORDS is a repository
+    # secret (Settings → Secrets → Actions) with real names that must never appear here.
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
+        with:
+          persist-credentials: false
+      - run: node scripts/privacy-check.mjs
+        env:
+          MOCHI_PRIVATE_WORDS: ${{ secrets.MOCHI_PRIVATE_WORDS }}
+
+  test:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, ubuntu-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0  # v7.1.0
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - run: node --test tests/*.mjs
+        shell: bash
+      - name: Python sources compile
+        run: python -m compileall -q app engines scripts
+      - name: PowerShell scripts parse
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: |
+          $failed = $false
+          Get-ChildItem engines/alloggiati -Include *.ps1,*.psm1 -Recurse | ForEach-Object {
+            $errors = $null
+            [System.Management.Automation.Language.Parser]::ParseFile($_.FullName, [ref]$null, [ref]$errors) | Out-Null
+            if ($errors) { $failed = $true; $errors | ForEach-Object { Write-Error "$($_.Extent.File): $($_.Message)" } }
+          }
+          if ($failed) { exit 1 }
+      - name: JavaScript sources parse
+        shell: bash
+        run: for f in $(git ls-files '*.cjs' '*.mjs' 'app/ui/*.js' 'app/shared/*.js'); do node --check "$f" || exit 1; done
