@@ -13,3 +13,4 @@ receipt-profiles.json
 !examples/receipt-profiles.json
 *.pdf
 .private-words
+smoke-test.png

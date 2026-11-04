@@ -10,6 +10,7 @@
   "main": "app/main.cjs",
   "scripts": {
     "start": "electron .",
+    "prova": "electron . --mochi-qa",
     "test": "node --test tests/*.mjs",
     "privacy": "node scripts/privacy-check.mjs",
     "example": "python scripts/make_example.py"

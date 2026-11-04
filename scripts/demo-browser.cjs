@@ -35,6 +35,7 @@ async function main() {
     runtimeDefaults: { krossBase: path.join(work, 'examples', 'calendari'), alloggiatiState: path.join(work, 'alloggiati'),
       nodePath: process.execPath, pythonPath: python, powershellPath: path.join(work, 'powershell.exe') },
   });
+  fs.mkdirSync(path.join(work, 'ricevute'), { recursive: true });
   await service.initialize({ inspect: false });
   await service.selectKross(path.join(work, 'examples', 'kross-export-esempio.xlsx'));
 

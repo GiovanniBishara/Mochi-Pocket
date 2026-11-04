@@ -49,8 +49,9 @@ Milan's tourist tax) are Italian. All screenshots use invented properties and gu
 | **Cleanings** | One cleaning per check-out, per apartment and month, to check against the cleaning company's invoice. |
 
 <p align="center">
-  <img src="docs/calendari.png" width="420" alt="Kross calendars: three invented apartments, a dry run with 5 new bookings">
-  <img src="docs/tasse.png" width="420" alt="Tourist tax screen with property, year and month">
+  <img src="docs/ricevuta.png" width="290" alt="Guest receipt: issuer profile of an invented apartment, suggested number 1/26">
+  <img src="docs/calendari.png" width="290" alt="Kross calendars: three invented apartments, a dry run with 5 new bookings">
+  <img src="docs/tasse.png" width="290" alt="Tourist tax screen with property, year and month">
 </p>
 
 ## How it is built
@@ -89,10 +90,10 @@ git clone https://github.com/GiovanniBishara/Mochi-Pocket.git
 cd Mochi-Pocket
 npm install
 pip install -r requirements.txt
-npm start
+npm run prova      # a trial with its own data folder (Documents\Mochi Pocket prova)
 ```
 
-`examples/` holds three invented apartments and an invented Kross export, so the
+`npm start` opens Mochi with your real data folders. `examples/` holds three invented apartments and an invented Kross export, so the
 calendar import can be tried in two minutes. The [setup guide](LEGGIMI.md)
 covers your own properties, Google Sheets, receipts and Alloggiati Web.
 

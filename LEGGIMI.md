@@ -24,8 +24,12 @@ git clone https://github.com/GiovanniBishara/Mochi-Pocket.git
 cd Mochi-Pocket
 npm install
 pip install -r requirements.txt
-npm start
+npm run prova
 ```
+
+`npm run prova` apre Mochi con una cartella dati tutta sua
+(`Documenti\Mochi Pocket prova`): perfetto per provarlo senza toccare niente.
+Quando lo userai davvero, avvialo con `npm start`.
 
 Si apre la console di Mochi. **A** conferma, **B** torna indietro, **SELECT**
 apre il diario, **START** esegue l'azione principale; va bene anche il mouse.

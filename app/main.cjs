@@ -5,7 +5,8 @@ const {restoreReceiptProfiles,findLegacyProfileDirectories}=require('./profile-s
 const appDir=path.resolve(__dirname,'..');
 const appId='io.github.giovannibishara.mochipocket';
 const iconPath=path.join(appDir,'assets','mochi-windows-large-v2.ico');
-const testDir=(process.argv.includes('--mochi-qa')||process.argv.includes('--smoke-test'))?process.env.MOCHI_TEST_DATA_DIR:undefined;
+// --mochi-qa (npm run prova): a separate data folder, so a trial never touches real settings, profiles or receipts.
+const testDir=(process.argv.includes('--mochi-qa')||process.argv.includes('--smoke-test'))?(process.env.MOCHI_TEST_DATA_DIR||path.join(os.homedir(),'Documents','Mochi Pocket prova')):undefined;
 const dataDir=testDir?path.resolve(testDir):path.join(os.homedir(),'AppData','Local','MochiPocket');
 // Packaged launchers can virtualize AppData. Fiscal profiles need one shared path.
 const profilePath=path.join(testDir?dataDir:path.join(os.homedir(),'.mochi-pocket'),'receipt-profiles.json');

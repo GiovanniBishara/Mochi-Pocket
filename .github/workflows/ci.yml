@@ -54,3 +54,29 @@ jobs:
       - name: JavaScript sources parse
         shell: bash
         run: for f in $(git ls-files '*.cjs' '*.mjs' 'app/ui/*.js' 'app/shared/*.js'); do node --check "$f" || exit 1; done
+
+  app:
+    # Opens the real Electron window on Windows with an empty data folder,
+    # checks that every module answers, and keeps a screenshot of the window.
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0  # v7.1.0
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - run: npm install --no-audit --no-fund
+      - name: Start Mochi Pocket and take a screenshot
+        shell: pwsh
+        env:
+          MOCHI_TEST_DATA_DIR: ${{ runner.temp }}\mochi-data
+        run: |
+          npx electron . --smoke-test | Tee-Object -FilePath smoke.json
+          if (-not (Test-Path smoke-test.png)) { throw 'No window screenshot' }
+          Get-Content smoke.json
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02  # v4.6.2
+        with:
+          name: mochi-window
+          path: smoke-test.png
