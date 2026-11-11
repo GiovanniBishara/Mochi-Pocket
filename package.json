@@ -16,6 +16,6 @@
     "example": "python scripts/make_example.py"
   },
   "devDependencies": {
-    "electron": "45.2.1"
+    "electron": "45.2.3"
   }
 }
